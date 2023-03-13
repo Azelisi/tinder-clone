@@ -11,6 +11,7 @@ const OnBoarding = () => {
         show_gender: false,
         gender_identity: 'man',
         gender_interest: 'woman',
+        city: '',
         email: '',
         url: '',
         about: '',
@@ -146,6 +147,16 @@ const OnBoarding = () => {
                             />
                             <label htmlFor="everyone-gender-interest">Everyone</label>
                         </div>
+                        <label htmlFor="about">City</label>
+                        <input
+                            id="about"
+                            type="text"
+                            name="city"
+                            required={true}
+                            placeholder="Your city"
+                            value={formData.about}
+                            onChange={handleChange}
+                        />
 
                         <label htmlFor="about">About me</label>
                         <input

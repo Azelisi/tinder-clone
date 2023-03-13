@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 const AuthModal = ({ setShowModal, isSignUp }) => {
 
@@ -14,13 +15,16 @@ const AuthModal = ({ setShowModal, isSignUp }) => {
         setShowModal(false);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             if (isSignUp && (password !== confirmPassword)) {
                 setError('Passwords need to match!')
+                return
             }
-            console.log('make a post request to our database')
+
+            const response = await axios.post('http//localhost:8080/signup')
+
         }
         catch (error) {
             console.log(error)
